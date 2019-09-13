@@ -1,9 +1,6 @@
 package com.example.demo.service;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-import com.example.demo.domain.Topic;
-import com.fasterxml.jackson.annotation.JsonAlias;
+import com.example.demo.bean.Topic;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
