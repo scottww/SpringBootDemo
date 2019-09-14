@@ -3,6 +3,9 @@ package com.example.demo.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.example.demo.bean.User;
 import com.example.demo.service.UserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,10 +16,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/user")
+@Api(tags = "UserController")
 public class UserController {
     @Autowired
     private UserService userService;
 
+    @ApiOperation(value = "按用户名称查询", notes = "按用户名称查询")
+    @ApiImplicitParam(name = "username", value = "用户名称", required = true, dataType = "String", paramType = "query")
     @RequestMapping(value = "/getUserByName", method = RequestMethod.GET)
     public String getUserByName(String username) {
         JSONObject rs = new JSONObject();

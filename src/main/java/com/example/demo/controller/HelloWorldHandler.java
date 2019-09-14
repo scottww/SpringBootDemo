@@ -1,10 +1,13 @@
 package com.example.demo.controller;
 
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@Api(tags = "HelloWorldHandler")
 public class HelloWorldHandler {
     @RequestMapping(value = "/index")
     public String index(){
